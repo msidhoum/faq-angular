@@ -1,0 +1,54 @@
+{
+  "entries": [
+    {
+      "id": 4,
+      "question": "Combien coûte Netflix ?",
+      "response": "Choisissez le forfait qui vous convient.<br/><ul><li>Essentiel - (7,99 € par mois) Regardez Netflix sur 1 écran à la fois en définition standard.</li><li>Standard - (10,99 € par mois) Regardez Netflix sur 2 écrans à la fois. Haute définition disponible.</li><li>Premium - (13,99 € par mois) Regardez Netflix sur 4 écrans à la fois. Haute définition et Ultra HD disponibles.\n\n</li></ul>",
+      "tags": [
+        "coût",
+        "prix",
+        "forfait",
+        "compte"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Puis-je payer mon abonnement Netflix en espèces ?",
+      "response": "Oui. Vous pouvez acheter une carte cadeau Netflix en espèces chez un détaillant près de chez vous.",
+      "tags": [
+        "abonnement",
+        "espèces"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Puis-je régler plusieurs mois à la fois ?",
+      "response": "Netflix facture son service tous les mois, mais vous pouvez ajouter une ou plusieurs cartes cadeaux à votre compte de manière à pouvoir régler plusieurs mois. Vous pouvez acheter autant de cartes cadeaux que vous le souhaitez et bénéficierez ainsi du service Netflix jusqu'à épuisement du solde cumulé.",
+      "tags": [
+        "plusieurs mois",
+        "cartes cadeaux"
+      ]
+    },
+    {
+      "id": 1,
+      "question": "Comment changer ma date de facturation ?",
+      "response": "Pour changer votre date de facturation, vous devez annuler votre compte, puis le réactiver à la date de facturation qui vous intéresse.<br/>Si vous annulez votre compte au milieu de votre cycle de facturation, l'annulation ne sera pleinement effective qu'à la fin de ce cycle. Vous ne pourrez donc réactiver votre compte qu'après cette date. Si votre compte est suspendu, l'annulation sera effective immédiatement et vous pourrez donc réactiver votre compte à tout moment.",
+      "tags": [
+        "changer",
+        "facturation",
+        "compte",
+        "cycle"
+      ]
+    },
+    {
+      "id": 0,
+      "question": "Si l'essai est gratuit, pourquoi dois-je fournir mes informations de paiement ?",
+      "response": "Netflix vous demande d'enregistrer un mode de paiement afin de vous éviter une interruption de service à l'issue de l'essai gratuit. Pour ce faire, nous envoyons une demande d'autorisation à votre établissement financier afin de vérifier le bon fonctionnement de votre mode de paiement. Ces demandes ne sont pas des frais, mais dans certains cas, elles peuvent affecter temporairement le solde disponible de votre compte.",
+      "tags": [
+        "essai",
+        "gratuit",
+        "paiement"
+      ]
+    }
+  ]
+}
