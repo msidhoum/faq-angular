@@ -11,12 +11,17 @@ import {NgbTabChangeEvent, NgbTabset} from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None // to apply style css on sub components
 })
 export class SettingsComponent implements OnInit {
 
+  // tab component to bind
   @ViewChild('tabSet') tabSet: NgbTabset;
+
+  // search inpur form control
   searchInput = new FormControl();
+
+  // list of result
   dataList: Array<FaqEntryModel> = [];
 
   // form binding attributes
@@ -30,10 +35,12 @@ export class SettingsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // get all result when loading the component
     this.faqService.getAllEntries().subscribe((list: Array<FaqEntryModel>) => {
       this.dataList = list;
     });
 
+    // attach event when search input value changes to search new results
     this.searchInput.valueChanges.pipe(
       debounceTime(400),
     ).subscribe((value) => {
@@ -41,6 +48,10 @@ export class SettingsComponent implements OnInit {
     });
   }
 
+  /**
+   * fired when tab clicked
+   * @param $event NgbTabChangeEvent
+   */
   beforeChange($event: NgbTabChangeEvent) {
     if ($event.nextId === 'ngb-tab-0') {
       this.faqService.getAllEntries().subscribe((list: Array<FaqEntryModel>) => {
@@ -50,11 +61,17 @@ export class SettingsComponent implements OnInit {
     this.searchInput.setValue('');
   }
 
+  /**
+   * proceed to logout
+   */
   logout(): void {
     this.authenticationService.signOut();
     this.router.navigateByUrl('/login');
   }
 
+  /**
+   * Submit new question/response into the faq db
+   */
   submitNewQuestion(): void {
     if (this.question && this.response) {
       this.faqService.addEntry({

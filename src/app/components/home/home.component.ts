@@ -12,27 +12,42 @@ import {AuthenticationService} from '../../services/authentication.service';
 })
 export class HomeComponent implements OnInit {
 
-  input = new FormControl();
+  /**
+   * binding the form control for search input
+   */
+  searchInput = new FormControl();
+  /**
+   * list of faq entries to show
+   */
   dataList: Array<FaqEntryModel> = [];
+  /**
+   * flag that indicates if user is authenticated for header menu links
+   */
   authenticated: boolean;
 
   constructor(private faqService: FaqService,
               private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+    // load all results at startup
     this.faqService.getAllEntries().subscribe((list: Array<FaqEntryModel>) => {
       this.dataList = list;
     });
 
-    this.input.valueChanges.pipe(
+    // bind event to search input to apply new search for query
+    this.searchInput.valueChanges.pipe(
       debounceTime(400),
     ).subscribe((value) => {
       this.faqService.fullTextSearch(value).subscribe( (result: Array<FaqEntryModel>) => this.dataList = result);
     });
 
+    // init the authenticated flag
     this.authenticated = this.authenticationService.isAuthenticated();
   }
 
+  /**
+   * proceed to logout
+   */
   logout(): void {
     this.authenticationService.signOut();
   }
